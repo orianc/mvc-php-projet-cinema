@@ -1,8 +1,23 @@
 <?php
+
 namespace app\models;
-class Film {
+
+use system\MyPDO;
+
+class Film
+{
+    public $dbh;
+
     function __construct()
     {
-        echo "gestion des modeles";
+        require PATH_ROOT . '/system/MyPDO.php';
+        $this->dbh = MyPDO::connect();
     }
+
+    public function all() {
+        return "All film";
+        
+    }
+
+
 }

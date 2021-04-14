@@ -5,25 +5,22 @@
         </h1>
 
         <p>
-            Welcome
+            Découvrez la liste des films diffusé actuellement.
         </p>
 
-        <?php for ($i=0 ; $i < 10 ; $i++) : ?>
-            <div>
-            <h2 class="titre-film">
-            
-            </h2>
-
-            <p class="synopsys">
-            
-            </p>
-
-            <footer class="acteur">
-                <p>
-                </p>
-            </footer>
-
+        <div class="container">
+            <div class="row">
+                <?php for ($i = 0; $i < 10; $i++) : ?>
+                    <div>
+                        <h2 class="titre-film"></h2>
+                        <p class="synopsys"></p>
+                        <footer>
+                            <p class="acteur"></p>
+                            <p class="realisateur"></p>
+                        </footer>
+                    </div>
+                <?php endfor ?>
             </div>
-        <?php endfor ?>
+        </div>
     </div>
 </div>
