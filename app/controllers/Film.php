@@ -2,19 +2,19 @@
 namespace app\controllers;
 
 
-class Home
+class Film
 {
 
     function __construct()
     {
-        // echo "Contruct controller Home";
+        // echo "Contruct controller film";
     }
 
     public function index()
-    {   
-        $titre = 'Accueil';
-
-        $page = PATH_ROOT . '/app/views/home/index.php';
+    {
+        $titre = 'Films';
+        $page = PATH_ROOT . '/app/views/film/index.php';
         require PATH_ROOT. '/app/views/base.php';
+        
     }
 }

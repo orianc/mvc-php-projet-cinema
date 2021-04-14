@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap');
+
+/* Titre */
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'Antonio', sans-serif;
+    
+}

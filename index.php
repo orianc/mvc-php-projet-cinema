@@ -2,6 +2,9 @@
 // Util::dd();
 
 // Constantes de chemin
+
+use app\controllers\Home;
+
 define("PATH_ROOT", dirname($_SERVER['SCRIPT_FILENAME']));
 define('BASE_URL', dirname($_SERVER['SERVER_NAME']));
 
@@ -17,5 +20,10 @@ if (isset($_GET['url'])) {
     require PATH_ROOT."/app/controllers/$controller_name.php";
     $controller = "app\controllers\\$controller_name";
     $c = new $controller;
+    $c->index();
+}
+else {
+    require PATH_ROOT."/app/controllers/home.php";
+    $c = new \app\controllers\Home();
     $c->index();
 }
