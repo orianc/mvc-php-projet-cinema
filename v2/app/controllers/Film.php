@@ -3,23 +3,24 @@
 namespace app\controllers;
 
 use app\models\Film as ModelsFilm;
+use system\Controller;
 use system\lib\Util as LibUtil;
 
-class Film
+class Film extends Controller
 {
-
-    function __construct()
-    {
-    }
 
     public function index()
     {
         require PATH_ROOT . '/app/models/Film.php';
         $model_film = new ModelsFilm;
-        $films = $model_film->all();
-        $titre = 'Films';
-        $page = PATH_ROOT . '/app/views/film/index.php';
-        require PATH_ROOT . '/app/views/base.php';
+        $all_films = $model_film->all();
+        $this->render(
+            "/film/index" ,
+            [
+                'films' => $all_films,
+                'titrepage' => 'Les films'
+            ]
+        );
 
     }
 }

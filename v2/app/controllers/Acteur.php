@@ -3,23 +3,25 @@
 namespace app\controllers;
 
 use app\models\Acteur as ModelsActeur;
+use system\Controller;
 
-class Acteur
+class Acteur extends Controller
 {
 
-    function __construct()
-    {
-    }
-
     public function index()
-    {   
+    {
+        // Dialog avec DB
         require PATH_ROOT . "/app/models/acteur.php";
         $model_acteur = new ModelsActeur;
-        $acteurs = $model_acteur->all();
+        $all_acteurs = $model_acteur->all();
         $titre = 'Acteur';
-        $page = PATH_ROOT . "/app/views/acteur/index.php";
-        require PATH_ROOT. "/app/views/base.php";
-
-
+        // Chargement de la view
+        $this->render(
+            "acteur/index",
+            [
+                'titrepage' => 'Les acteurs',
+                'acteurs' => $all_acteurs
+            ]
+        );
     }
 }

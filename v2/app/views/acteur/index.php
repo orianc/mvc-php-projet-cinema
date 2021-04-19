@@ -1,10 +1,11 @@
 <?php
 
 use system\lib\Util; ?>
+
 <div class="container">
     <div class="row">
         <h1>
-            Les Acteurs
+        <?=$titrepage?>
         </h1>
 
         <p>

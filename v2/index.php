@@ -7,6 +7,8 @@ define('BASE_URL', dirname($_SERVER['SERVER_NAME']));
 // Chargement
 require PATH_ROOT . './system/lib/Util.php';
 require PATH_ROOT . './system/Model.php';
+require PATH_ROOT . './system/Controller.php';
+
 
 
 // Routage
