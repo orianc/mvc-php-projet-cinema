@@ -2,28 +2,12 @@
 
 namespace app\models;
 
-use PDOException;
+
+use system\Model;
 use system\MyPDO;
 
-class Film
+class Film extends Model
 {
-    public $dbh;
-
-    function __construct()
-    {
-        require PATH_ROOT . '/system/MyPDO.php';
-        $this->dbh = MyPDO::connect();
-    }
-
-    /**
-     * Requête simple vers table films de la DB
-     * La méthode retourne en mémoire un tableau d'objets des films
-     * 1. requete
-     * 2. transform
-     * 3. return
-     * 
-     * @return void
-     */
     public function all()
     {
         //  1. requete
@@ -43,7 +27,7 @@ class Film
             $sth->execute();
             $res = $sth->fetchAll(\PDO::FETCH_OBJ);
             return $res;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             die("<h3>Error de requête de SELECT<h3>");
         }
     }

@@ -15,8 +15,8 @@
 use system\lib\Util;
 
 foreach ($films as $f) : ?>
-                    <div class="col-4 bg-light rounded mx-1">
-                        <h2 class="text-center"><?= $f->titre_film?></h2>
+                    <div class="col-3 bg-light rounded mx-1 p-4">
+                        <h2 class="text-center text-uppercase"><?= $f->titre_film?></h2>
                         <p> <?= $f->resume_film?></p>
                         <footer>
                             <p class="acteur"></p>

@@ -10,7 +10,6 @@ class Film
 
     function __construct()
     {
-        // echo "Contruct controller film";
     }
 
     public function index()

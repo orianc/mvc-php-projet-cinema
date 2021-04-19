@@ -4,17 +4,11 @@ namespace app\models;
 
 use PDO;
 use PDOException;
+use system\Model;
 use system\MyPDO;
 
-class Acteur
+class Acteur extends Model
 {
-
-    public $dbh;
-    function __construct()
-    {
-        require PATH_ROOT . '/system/MyPDO.php';
-        $this->dbh = MyPDO::connect();
-    }
 
     public function all()
     {
