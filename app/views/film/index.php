@@ -9,17 +9,23 @@
         </p>
 
         <div class="container">
-            <div class="row">
-                <?php for ($i = 0; $i < 10; $i++) : ?>
-                    <div>
-                        <h2 class="titre-film"></h2>
-                        <p class="synopsys"></p>
+            <div class="row justify-content-center">
+                <?php
+
+use system\lib\Util;
+
+foreach ($films as $f) : ?>
+                    <div class="col-4 bg-light rounded mx-1">
+                        <h2 class="text-center"><?= $f->titre_film?></h2>
+                        <p> <?= $f->resume_film?></p>
                         <footer>
                             <p class="acteur"></p>
-                            <p class="realisateur"></p>
+                            <p><a href="#"><?= $f->realisateur_prenom . " " . $f->realisateur_nom?></a></p>
+                            <p class=""><a href="#"><?= $f->nom_genre?></a></p>
+
                         </footer>
                     </div>
-                <?php endfor ?>
+                <?php endforeach ?>
             </div>
         </div>
     </div>

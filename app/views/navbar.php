@@ -9,6 +9,8 @@
                 <div class="navbar-nav">
                     <a class="nav-link active text-white" aria-current="page" href="<?= BASE_URL ?>?url=home">Accueil</a>
                     <a class="nav-link text-white" href="<?= BASE_URL ?>?url=film">Films</a>
+                    <a class="nav-link text-white" href="<?= BASE_URL ?>?url=acteur">Acteurs</a>
+
                 </div>
             </div>
         </div>

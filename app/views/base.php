@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <?php 
+    <?php
     require PATH_ROOT . '/app/views/navbar.php';
     require $page;
     ?>

@@ -7,10 +7,19 @@ h1 {
     font-family: 'Antonio', sans-serif;
     
 }
+
+h3 {
+    font-family: 'Antonio', sans-serif;
+
+}
 .navlink {
     color: white;
 }
 
 .active {
     color: beige;
+}
+
+a {
+    text-decoration: none!important;
 }

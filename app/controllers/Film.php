@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\Film as ModelsFilm;
-use Util;
+use system\lib\Util as LibUtil;
 
 class Film
 {
@@ -18,9 +18,9 @@ class Film
         require PATH_ROOT . '/app/models/Film.php';
         $model_film = new ModelsFilm;
         $films = $model_film->all();
-        Util::dd($films);
         $titre = 'Films';
         $page = PATH_ROOT . '/app/views/film/index.php';
         require PATH_ROOT . '/app/views/base.php';
+
     }
 }
