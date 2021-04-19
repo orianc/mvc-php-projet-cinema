@@ -16,7 +16,7 @@ use system\lib\Util; ?>
                 <?php
                 foreach ($acteurs as $a) : ?>
                     <a href="">
-                        <h3 class="text-center"><?= $a->prenom . " " . $a->nom ?></h2>
+                        <h3 class="text-center"><?= $a->prenom . " " . $a->nom ?></h3>
                     </a>
                 <?php endforeach ?>
             </div>
