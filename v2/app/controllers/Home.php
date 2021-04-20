@@ -1,20 +1,20 @@
 <?php
+
 namespace app\controllers;
 
+use system\Controller;
 
-class Home
+class Home extends Controller
 {
 
-    function __construct()
-    {
-        // echo "Contruct controller Home";
-    }
-
     public function index()
-    {   
-        $titre = 'Accueil';
+    {
 
-        $page = PATH_ROOT . '/app/views/home/index.php';
-        require PATH_ROOT. '/app/views/base.php';
+        $this->render(
+            "home/index",
+            [
+                'titrepage' => 'Accueil'
+            ]
+        );
     }
 }

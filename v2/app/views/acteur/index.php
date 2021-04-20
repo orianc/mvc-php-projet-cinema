@@ -13,11 +13,11 @@ use system\lib\Util; ?>
         </p>
 
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row col-12 col-sm-6 col-md-4 mx-1 py-3 bg-secondary rounded">
                 <?php
                 foreach ($acteurs as $a) : ?>
                     <a href="">
-                        <h3 class="text-center"><?= $a->prenom . " " . $a->nom ?></h3>
+                        <h3 class="text-white"><?= $a->prenom . " " . $a->nom ?></h3>
                     </a>
                 <?php endforeach ?>
             </div>
