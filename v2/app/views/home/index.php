@@ -1,7 +1,7 @@
     <div class="container">
         <div class="row">
         <h1>
-            Accueil
+            <?= $titrepage ?>
         </h1>
 
         <p>

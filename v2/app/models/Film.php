@@ -2,31 +2,29 @@
 
 namespace app\models;
 
-use PDOException;
+use system\lib\Util;
+use system\Model;
 use system\MyPDO;
 
-class Film
+class Film extends Model
 {
-    public $dbh;
 
-    function __construct()
-    {
-        require PATH_ROOT . '/system/MyPDO.php';
-        $this->dbh = MyPDO::connect();
+    
+    public function all(){
+        $sql = "SELECT * FROM film";
+        try {
+            $sth = $this->dbh->prepare($sql);
+            $sth->execute();
+            $res = $sth->fetchAll(\PDO::FETCH_OBJ);
+            return $res;
+        } catch (\PDOException $e) {
+            die("<h3>Error de requête de SELECT<h3>");
+        }
+
     }
-
-    /**
-     * Requête simple vers table films de la DB
-     * La méthode retourne en mémoire un tableau d'objets des films
-     * 1. requete
-     * 2. transform
-     * 3. return
-     * 
-     * @return void
-     */
-    public function all()
+    public function getById($id)
     {
-        //  1. requete
+       
         $sql =
             "SELECT 
             film.titre_film,
@@ -37,13 +35,14 @@ class Film
             realisateur.nom AS realisateur_nom
             FROM film 
             JOIN realisateur ON film.realisateur_id = realisateur.id
-            JOIN genre ON film.genre_id = genre.id";
+            JOIN genre ON film.genre_id = genre.id
+            AND film.id = '$id'";
         try {
             $sth = $this->dbh->prepare($sql);
             $sth->execute();
-            $res = $sth->fetchAll(\PDO::FETCH_OBJ);
+            $res = $sth->fetch(\PDO::FETCH_OBJ);
             return $res;
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             die("<h3>Error de requête de SELECT<h3>");
         }
     }

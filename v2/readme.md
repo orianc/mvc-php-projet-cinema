@@ -3,3 +3,7 @@
 - Root des élèments via l'index principal
 - Intégration des assets CSS
 - Création d'un fichier MyPDO pour configurer les fonctions dédiées à l'instanciation à la DB_cinema.
+
+# v2 = Notion d'héritage pour optimiser les classes
+
+- Mise en place d'un "détail" de film dynamique qui reroot l'index vers le detail du film

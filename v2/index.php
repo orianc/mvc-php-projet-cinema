@@ -1,25 +1,16 @@
 <?php
 // Constantes de chemin
 
+use system\lib\Util;
+use system\Router;
+
 define("PATH_ROOT", dirname($_SERVER['SCRIPT_FILENAME']));
 define('BASE_URL', dirname($_SERVER['SERVER_NAME']));
 
 // Chargement
 require PATH_ROOT . './system/lib/Util.php';
+require PATH_ROOT . './system/Model.php';
+require PATH_ROOT . './system/Controller.php';
+require PATH_ROOT . './system/Rooter.php';
 
-
-// Routage
-
-if (isset($_GET['url'])) {
-    $url = $_GET['url'];
-    $controller_name = $url;
-    require PATH_ROOT."/app/controllers/$controller_name.php";
-    $controller = "app\controllers\\$controller_name";
-    $c = new $controller;
-    $c->index();
-}
-else {
-    require PATH_ROOT."/app/controllers/home.php";
-    $c = new \app\controllers\Home();
-    $c->index();
-}
+Router::run();
