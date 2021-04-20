@@ -6,12 +6,4 @@
     Genre : <?= $film->nom_genre ?>
     </p>
 
-
-
-
-    <?php
-
-    use system\lib\Util;
-
-    Util::dd($film) ?>
 </div>

@@ -1,6 +1,9 @@
 <?php
 namespace system;
 
+use app\controllers\Home;
+use app\models\Home as ModelsHome;
+
 class Router {
     
     
@@ -18,8 +21,8 @@ class Router {
         #-- 1
          
         if(empty($_GET['url'])){
-            require BASE_APP."controllers/accueil.php";
-            $controller=new Accueil();
+            require PATH_ROOT."controllers/home.php";
+            $controller=new ModelsHome();
             $controller->index();
             exit;
         }
@@ -34,17 +37,17 @@ class Router {
         
         
         $controllerName = array_shift($url);
-        $file = BASE_APP."controllers/". $controllerName .".php";
+        $file = PATH_ROOT."controllers/". $controllerName .".php";
         
         if( file_exists($file)){
-            require BASE_APP."controllers/".$controllerName.".php";
+            require PATH_ROOT."controllers/".$controllerName.".php";
             $controllerName = ucfirst($controllerName);
             $controller = new $controllerName;
         }else{
-            require BASE_APP."controllers/error.php";
-            $controller = new Error();
-            $controller‐>index();
-            exit;
+            // require PATH_ROOT."controllers/error.php";
+            // $controller = new Home();
+            // $controller‐>index();
+            // exit;
         }
          
         #-- 4
