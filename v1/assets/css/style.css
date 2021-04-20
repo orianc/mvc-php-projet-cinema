@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap');
+
+/* Titre */
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'Antonio', sans-serif;
+}
+
+h3 {
+    font-family: 'Antonio', sans-serif;
+}
+.navlink {
+    color: white;
+}
+
+.active {
+    color: beige;
+}
+
+a {
+    text-decoration: none!important;
+}

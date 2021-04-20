@@ -1,0 +1,1 @@
+Les classes utiles à différent projet et utilisées par différentes app
